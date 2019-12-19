@@ -557,8 +557,8 @@ mvuPage((contents=""), view, updt)
   \bl
 \mkwd{update} : (\mkwd{Message} \times \mkwd{Model}) \to (\mkwd{Model},
 \cmdty{\mkwd{Message}})\\
-\mkwd{update} = \lambda \textit{model} . \\
-\quad \caseofone{\textit{model}} \{ \\
+\mkwd{update} = \lambda (\textit{msg}, \textit{model}) . \\
+\quad \caseofone{\textit{msg}} \{ \\
   \qquad \mkwd{StartComputation} \mapsto (\mkwd{Nothing},
   \cmdspawn{\mkwd{Result}(\textsf{na\"iveFib}(1000))}) \\
   \qquad \mkwd{Result}(x) \mapsto (\mkwd{Just}(x), \cmdempty) \\
@@ -693,6 +693,7 @@ mvuPage((contents=""), view, updt)
 \begin{frame}{Model transitions}
 \setbeamercovered{transparent}
   \small
+  \onslide<1>{
     \framebox{
 \begin{minipage}[t]{0.4\textwidth}
   \begin{center}
@@ -722,6 +723,7 @@ mvuPage((contents=""), view, updt)
   %
   \]
 \end{minipage}
+  }
 }
 \hfill
 \onslide<2>{
